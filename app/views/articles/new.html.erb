@@ -1,0 +1,28 @@
+<%= render 'partials/header' %>
+
+<div id="newBlog" class="sectionDiv">
+<div class="sectionTitle">Add A New Blog</div>
+<hr class="sectionHR">
+
+<%= form_for @article do |f| %> 
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>&nbsp;
+    
+    <div>
+        <p>Post:</p>
+        <%= f.text_area :description, id:'blogArea' %>
+    </div>
+    
+    <div>
+        <%= f.submit %>
+    </div>
+
+<% end %> 
+
+
+</div> 
+
+<%= render 'partials/footer' %>
