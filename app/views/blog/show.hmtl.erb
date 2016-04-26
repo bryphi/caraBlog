@@ -1,0 +1,23 @@
+<%= render "partials/header" %>
+
+<div id="show" class="sectionDiv">
+<div class="sectionTitle"></div>
+<hr class="sectionHR">
+
+     <div class ="">
+                    <div class ="">
+                        <div>
+                            <h4><a>blogTitle</a></h4>
+                            <p>blogDate</p>
+                            <div id="postArea"><pre id="postedBlog">blogPost</pre></div>
+                            <button class="btn"><a href="/blogs/<%=blog._id%>/edit">Edit</a></button>
+                            <form id="" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                                <button class="btn">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+
+</div>
+
+<%= render "partials/footer" %>
