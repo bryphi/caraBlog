@@ -4,11 +4,19 @@
 <div class="sectionTitle">Add A New Blog</div>
 <hr class="sectionHR">
 
+<% if @article.errors.any? %>
+<ul>
+    <h4>There were errors with your blog post:</h4>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= form_for @article do |f| %> 
 
     <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+        Title:<%= f.text_field :title %>
     </div>&nbsp;
     
     <div>

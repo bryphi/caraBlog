@@ -4,30 +4,31 @@
 <div class="sectionTitle">Edit Blog Entry</div>
 <hr class="sectionHR">
 
-    <div class ="">
-        <div class = "">
-            
-            <div id="">
-                <form id="newblog"action = "/blogs/<%=blog._id %>/?_method=PUT" method= "POST">
-                    <div class = "">
-                        Title:<input class ="" type="text" name = "blog[blogTitle]" value = "<%=blog.blogTitle%>">
-                    </div>&nbsp;
-                    <div class = "">
-                        Date:<input id="date" type="text" name = "blog[blogDate]" value = "<%=blog.blogDate%>">
-                    </div>&nbsp;
-                    <div class = "">
-                        <textarea wrap="hard" id="blogArea" name ="blog[blogPost]"><%=blog.blogPost%></textarea>
-                    </div>&nbsp;
-                    <div class = "">
-                        <button class ="btn">Submit</button>
-                    </div> 
-                 </form>
-                &nbsp;
-               
-                
-            </div>
+   <% if @article.errors.any? %>
+<ul>
+    <h4>There were errors with your blog post:</h4>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |f| %> 
+
+    <div>
+        Title:<%= f.text_field :title %>
+    </div>&nbsp;
+    
+    <div>
+        <p>Post:</p>
+        <%= f.text_area :description, id:'blogArea' %>
     </div>
-</div>
+    
+    <div>
+        <%= f.submit %>
+    </div>
+
+<% end %> 
 
 
 </div>
