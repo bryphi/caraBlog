@@ -1,0 +1,29 @@
+<div id="blog" class="sectionDiv">
+        <div class="sectionTitle">Blog</div>
+        <hr class="sectionHR">
+        
+        <div class="">
+            <header class = "">
+                <div class = "">
+                    <%= link_to "Create New Post", new_article_path %>  
+                </div>
+            </header>
+            <div class = "">
+                    
+                        <% @articles.each do |article| %>
+                                        <h4><%= article.title %></h4>
+                                    <div>
+                                        <p></p>
+                                    </div>
+                                    <div>
+                                        <pre id="postArea"><%= article.description %></pre>
+                                    </div>
+                                    <button>
+                                        <%= link_to "Read More", article_path(article) %> 
+                                    </button>
+                        <% end %>
+                    
+            </div>
+        </div>
+
+</div>

@@ -3,16 +3,22 @@
 <div id="show" class="sectionDiv">
 <div class="sectionTitle"></div>
 <hr class="sectionHR">
-
+    <button>
+        <%= link_to "Back to Blog", articles_path %> 
+    </button>
+    <br>
+    <br>
      <div class ="">
                     <div class ="">
                         <div>
                             <h4><%= @article.title %></h4>
                             
                             <div id="postArea"><pre id="postedBlog"><%= @article.description%></pre></div>
-                            <button class="btn"><a href="">Edit</a></button>
+                            <button>
+                                <%= link_to "Edit Post", edit_article_path %> 
+                            </button>
                             <form id="" action="" method="POST">
-                                <button class="btn">Delete</button>
+                                <button>Delete</button>
                             </form>
                         </div>
                     </div>
