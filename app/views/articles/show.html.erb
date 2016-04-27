@@ -17,9 +17,10 @@
                             <button>
                                 <%= link_to "Edit Post", edit_article_path %> 
                             </button>
-                            <form id="" action="" method="POST">
-                                <button>Delete</button>
-                            </form>
+                            <button>
+                                <%= link_to "Delete Post", article_path(@article), :method => :delete, data: {confirm: "Are you sure?"} %>
+                           </button>
+                            
                         </div>
                     </div>
         </div>
