@@ -3,6 +3,10 @@
 <div id="edit" class="sectionDiv">
 <div class="sectionTitle">Edit Blog Entry</div>
 <hr class="sectionHR">
+<button>
+    <%= link_to "Back to Blog", articles_path %> 
+</button><br>
+<br>
 
    <% if @article.errors.any? %>
 <ul>
