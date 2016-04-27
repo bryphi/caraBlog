@@ -16,7 +16,13 @@
             <span id="navbarLinks"><a href="/resume">Resumé</a></span>
             <span id="navbarLinks"><a href="/contact">Contact</a></span>
             <span id="navbarLinks"><a href="/articles">Blog</a></span>
-            
+            <br>
+            <br>
+        <div>
+        <% flash.each do |name,msg| %>
+           <div><%= msg %></div>
+         <% end %>
+        </div>
 </div>
 
   <div id="blurb" class="sectionDiv">

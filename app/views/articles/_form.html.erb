@@ -1,0 +1,30 @@
+<button>
+    <%= link_to "Back to Blog", articles_path %> 
+</button>
+<br>
+<br>
+<% if @article.errors.any? %>
+<ul>
+    <h4>There were errors with your blog post:</h4>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |f| %> 
+
+    <div>
+        Title:<%= f.text_field :title %>
+    </div>
+    
+    <div>
+        <p>Post:</p>
+        <%= f.text_area :description, id:'blogArea' %>
+    </div>
+    
+    <div>
+        <%= f.submit %>
+    </div>
+
+<% end %> 
