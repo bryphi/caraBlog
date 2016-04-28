@@ -4,8 +4,8 @@ class CreateArticles < ActiveRecord::Migration
       
       t.string "title"
       t.text    "description"
-      t.datetime "created_at"
-      t.datetime "updated_at"
+      t.date    "date"
+      t.string  "tags"
     end
   end
 end

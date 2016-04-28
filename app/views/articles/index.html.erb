@@ -8,12 +8,22 @@
                     <%= link_to "Create New Post", new_article_path %>  
                 </div>
             </header>
+            <div class="search">
+            <%= form_tag({controller: "articles"}, action:"search", method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+            <% end %>
+            </div>
             <div class = "">
                     
                         <% @articles.each do |article| %>
                                         <h4><%= article.title %></h4>
                                     <div>
-                                        <p></p>
+                                        <p><%= article.date %></p>
+                                    </div>
+                                    <div>
+                                        Tags: <%= article.tags %> 
                                     </div>
                                     <div>
                                         <pre id="postArea"><%= article.description %></pre>

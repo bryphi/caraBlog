@@ -12,7 +12,10 @@
                     <div class ="">
                         <div>
                             <h4><%= @article.title %></h4>
-                            
+                            <%= @article.date %>
+                            <div>
+                                Tags: <%= @article.tags %> 
+                            </div>
                             <div id="postArea"><pre id="postedBlog"><%= @article.description%></pre></div>
                             <button>
                                 <%= link_to "Edit Post", edit_article_path %> 

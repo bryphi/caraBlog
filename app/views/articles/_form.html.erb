@@ -16,8 +16,13 @@
 
     <div>
         Title:<%= f.text_field :title %>
+    </div> <br>
+    <div>
+        Date: <%= f.date_field :date? %>
+    </div><br>
+    <div>
+        Tags: <%= f.text_field :tags %> 
     </div>
-    
     <div>
         <p>Post:</p>
         <%= f.text_area :description, id:'blogArea' %>
