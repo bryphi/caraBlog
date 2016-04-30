@@ -1,0 +1,19 @@
+ <div id="login" class="sectionDiv">
+<div class="sectionTitle">Please Login</div>
+<hr class="sectionHR">
+
+<%= form_for :session, url: login_path do |f| %> 
+
+    <div>
+        Username:<%= f.text_field :username %>
+    </div> <br>
+    <div>
+        Password: <%= f.password_field :password %> 
+    </div><br>
+    <div>
+        <%= f.submit "Login" %>
+    </div>
+
+<% end %> 
+
+</div>

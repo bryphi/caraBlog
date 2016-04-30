@@ -1,0 +1,28 @@
+<div id="newUser" class="sectionDiv">
+<div class="sectionTitle">Sign Up</div>
+<hr class="sectionHR">
+
+<% if @user.errors.any? %>
+<ul>
+    <h4>There were errors with your sign up:</h4>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @user do |f| %> 
+
+    <div>
+        Enter a Username:<%= f.text_field :username %>
+    </div> <br>
+    <div>
+        Enter a Password: <%= f.password_field :password %> 
+    </div><br>
+    <div>
+        <%= f.submit "Sign Up" %>
+    </div>
+
+<% end %> 
+
+</div>

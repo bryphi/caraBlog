@@ -15,6 +15,9 @@
               <%= submit_tag("Search") %>
             <% end %>
             </div>
+            <div>
+                <%= will_paginate %>
+            </div>
             <div class = "">
                     
                         <% @articles.each do |article| %>
@@ -33,6 +36,9 @@
                                     </button>
                         <% end %>
                     
+            </div>
+            <div>
+                <%= will_paginate %>
             </div>
         </div>
 
