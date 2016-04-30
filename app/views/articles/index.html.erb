@@ -3,11 +3,13 @@
         <hr class="sectionHR">
         
         <div class="">
-            <header class = "">
-                <div class = ""> 
-                    <%= link_to "Create New Post", new_article_path %>  
-                </div>
-            </header>
+            <% if logged_in? %>
+                <header class = "">
+                    <div class = ""> 
+                        <%= link_to "Create New Post", new_article_path %>  
+                    </div>
+                </header>
+            <% end %>
             <div class="search">
             <%= form_tag({controller: "articles"}, action:"search", method: "get") do %>
               <%= label_tag(:q, "Search for:") %>
@@ -15,6 +17,7 @@
               <%= submit_tag("Search") %>
             <% end %>
             </div>
+            
             <div>
                 <%= will_paginate %>
             </div>

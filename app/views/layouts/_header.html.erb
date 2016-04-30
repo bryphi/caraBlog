@@ -32,5 +32,7 @@
     <p>Freelance writer, glorious/low-brow foodie and recent iPhone convert. 
     Witness my effort to rein in an almost debilitating tendency toward sarcasm 
     and self-deprecation.</p>
-      <%= link_to 'log out', logout_path, method: :delete %>
+      <% if logged_in? %>
+          <%= link_to 'log out', logout_path, method: :delete %>
+      <% end %>
   </div>
