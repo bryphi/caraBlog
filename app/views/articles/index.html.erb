@@ -32,7 +32,7 @@
                                         Tags: <%= article.tags %> 
                                     </div>
                                     <div>
-                                        <pre id="postArea"><%= article.description %></pre>
+                                        <pre id="postArea"><%= article.description.html_safe %></pre>
                                     </div>
                                     <button>
                                         <%= link_to "Read More", article_path(article) %> 

@@ -16,8 +16,8 @@
                             <div>
                                 Tags: <%= @article.tags %> 
                             </div>
-                            <div id="postArea"><pre id="postedBlog"><%= @article.description%></pre></div>
-                            <% if logged_in? && current_user == @article.user %>
+                            <div id="postArea"><pre id="postedBlog"><%= @article.description.html_safe%></pre></div>
+                            <% if logged_in? && (current_user == @article.user || current_user.admin?)%>
                                 <button>
                                     <%= link_to "Edit Post", edit_article_path %> 
                                 </button>
