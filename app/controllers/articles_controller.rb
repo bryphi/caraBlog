@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
    
     def index
         @articles = Article.paginate(page: params[:page], per_page: 5)
-        @article = Article.search(params[:search])
     end 
     
     def new 
@@ -16,14 +15,11 @@ class ArticlesController < ApplicationController
         
     end 
     
-    def search
-        
-    end 
     
     def update
         
         if @article.update(article_params)
-            flash[:notice] = "Post was successfully updated!"
+            flash[:success] = "Post was successfully updated!"
             redirect_to article_path(@article)
         else 
             render 'edit'
@@ -34,7 +30,7 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
-           flash[:notice] = "Post was successfully created!" 
+           flash[:success] = "Post was successfully created!" 
            redirect_to article_path(@article)
         else
             render 'new'
@@ -48,7 +44,7 @@ class ArticlesController < ApplicationController
     def destroy
         
         @article.destroy
-        flash[:notice] = "Post was deleted!"
+        flash[:danger] = "Post was deleted!"
         redirect_to articles_path 
     end 
     

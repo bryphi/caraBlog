@@ -5,9 +5,7 @@ class Article < ActiveRecord::Base
     validates :date, presence: true
     validates :user_id, presence: true
     
-    def self.search(search)
-        where('tags LIKE ?', "%#{search}%")
-    end
+   
    
 end 
 

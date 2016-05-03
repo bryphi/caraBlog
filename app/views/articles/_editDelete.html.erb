@@ -1,0 +1,8 @@
+<% if logged_in? && (current_user == @article.user || current_user.admin?)%>
+        <button>
+            <%= link_to "Edit Post", edit_article_path %> 
+        </button>
+        <button>
+            <%= link_to "Delete Post", article_path(@article), :method => :delete, data: {confirm: "Are you sure?"} %>
+        </button>
+<% end %>

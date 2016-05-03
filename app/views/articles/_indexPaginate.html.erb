@@ -1,0 +1,26 @@
+<div>
+     <%= will_paginate %>
+</div>
+<div>
+                    
+        <% @articles.each do |article| %>
+        <div class="post">
+            <h2><%= article.title %></h2>
+            <div>
+                <p><%= article.date %></p>
+            </div>
+            <div>
+                <pre><%= article.description.html_safe %>...<%= link_to "Continue Reading ->", article_path(article) %></pre>
+            </div>
+        
+            <div class="tagDiv">
+                Tagged with: <%= article.tags %> 
+            </div>
+            
+        </div>
+        <% end %>
+                
+</div>
+<div>
+    <%= will_paginate %>
+</div>

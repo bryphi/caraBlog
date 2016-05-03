@@ -1,0 +1,168 @@
+$navbar-default-bg:#f5f4f4;
+$navbar-default-border:none;
+
+
+// Custom bootstrap variables must be set or import before bootstrap itself.
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body{
+    background-color:#f5f4f4;
+    padding-top:50px;
+    font-size:12px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color:#666666;
+    display:block;
+    line-height:20px;
+    padding:0px;
+    margin: 0px auto 0px;
+}
+
+#headTitle{
+    display:block;
+    padding: 64px 10px 10px 10px;
+    font-size:36px;
+    line-height:36px;
+    font-weight:bold;
+    font-style:italic;
+    color:#000000;
+    
+}
+
+#blurb{
+    float: right;
+    display: block;
+    width: 280px;
+    margin: 0px 15px 0px 0px; 
+    padding: 0px;
+    line-height: 18px;
+    overflow:visible;
+    text-align:left;
+  
+}
+
+.nameBlurb{
+    color: #000000;
+    font-size: 12px;
+    font-family: Helvetica, Arial, Trebuchet MS, Verdana;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 0px 0px 5px 0px;
+    padding: 0px;
+    line-height: 16px;
+}
+
+
+#erieIMG{
+    width:428px;
+    height:428px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+    
+}
+
+#caraDog{
+    width:226px;
+    height:226px;
+}
+
+img{
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.sectionTitle{
+    color: #000000;
+    font-size: 12px;
+    font-family: Helvetica, Arial, Trebuchet MS, Verdana;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 16px;
+}
+
+.sectionHR {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(204, 153, 204, 0.75), rgba(0, 0, 0, 0));
+}
+
+.sectionDiv{
+    margin-left:15%;
+    margin-right:30%;
+    text-align:left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding-bottom:25px;
+    
+}
+
+#experience{
+    text-align:right;
+}
+
+table{
+   /* border: 1px solid #DDDDDD; */
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 5px 0px 0px 0px;
+    margin-bottom: 15px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    float:left;
+    margin-right:10px;
+}
+
+a{
+    color:black;
+}
+
+.tagDiv{
+    border-top: 6px solid white;
+    
+}
+
+pre{
+    border:none;
+    background:#eeeeee;
+}
+
+.post{
+    background:#eeeeee;
+    border-radius: 8px;
+    border-bottom: 2px solid white;
+}
+.postHR{
+    border: 5px solid #f5f4f4;
+}
+
+#blogArea{
+    padding: 5px; 
+    border: solid 1px #d5d5d5; 
+    outline: 0; 
+    width: 600px;
+    height:400px;
+    border-radius:10px;
+}
+
+input{
+    padding: 5px; 
+    border: solid 1px #d5d5d5; 
+    outline: 0; 
+    width: 400px;
+    border-radius:10px;
+}
+
+#error{
+    border-radius: 12px;
+}
+
+

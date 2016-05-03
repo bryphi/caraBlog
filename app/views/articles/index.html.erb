@@ -2,47 +2,11 @@
         <div class="sectionTitle">Blog</div>
         <hr class="sectionHR">
         
-        <div class="">
-            <% if logged_in? %>
-                <header class = "">
-                    <div class = ""> 
-                        <%= link_to "Create New Post", new_article_path %>  
-                    </div>
-                </header>
-            <% end %>
-            <div class="search">
-            <%= form_tag({controller: "articles"}, action:"search", method: "get") do %>
-              <%= label_tag(:q, "Search for:") %>
-              <%= text_field_tag(:q) %>
-              <%= submit_tag("Search") %>
-            <% end %>
-            </div>
+        <div>
+            <%= render 'newPostLinkIndex' %>
             
-            <div>
-                <%= will_paginate %>
-            </div>
-            <div class = "">
-                    
-                        <% @articles.each do |article| %>
-                                        <h4><%= article.title %></h4>
-                                    <div>
-                                        <p><%= article.date %></p>
-                                    </div>
-                                    <div>
-                                        Tags: <%= article.tags %> 
-                                    </div>
-                                    <div>
-                                        <pre id="postArea"><%= article.description.html_safe %></pre>
-                                    </div>
-                                    <button>
-                                        <%= link_to "Read More", article_path(article) %> 
-                                    </button>
-                        <% end %>
-                    
-            </div>
-            <div>
-                <%= will_paginate %>
-            </div>
+            
+            <%= render 'indexPaginate' %>
         </div>
 
-</div>
+</div> 

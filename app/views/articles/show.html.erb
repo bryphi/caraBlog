@@ -11,20 +11,13 @@
      <div class ="">
                     <div class ="">
                         <div>
-                            <h4><%= @article.title %></h4>
+                            <h2><%= @article.title %></h2>
                             <%= @article.date %>
                             <div>
                                 Tags: <%= @article.tags %> 
                             </div>
                             <div id="postArea"><pre id="postedBlog"><%= @article.description.html_safe%></pre></div>
-                            <% if logged_in? && (current_user == @article.user || current_user.admin?)%>
-                                <button>
-                                    <%= link_to "Edit Post", edit_article_path %> 
-                                </button>
-                                <button>
-                                    <%= link_to "Delete Post", article_path(@article), :method => :delete, data: {confirm: "Are you sure?"} %>
-                               </button>
-                            <% end %>
+                            <%= render 'editDelete' %>
                         </div>
                     </div>
         </div>
