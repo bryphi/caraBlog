@@ -48,6 +48,19 @@ class ArticlesController < ApplicationController
         redirect_to articles_path 
     end 
     
+    def search
+        if params[:article]
+        @article = Article.find_by(params[:article])
+        
+        @article ||= Article.new_from_lookup(params[:article])
+        end
+        if @article
+        render partial: 'lookup'
+        else
+        render status: :not_found, nothing: true
+        end
+    end 
+    
     private
         def set_article
           @article = Article.find(params[:id])  

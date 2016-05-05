@@ -3,7 +3,7 @@
 <div id="show" class="sectionDiv">
 <div class="sectionTitle"></div>
 <hr class="sectionHR">
-    <button>
+    <button class="btn btn-default">
         <%= link_to "Back to Blog", articles_path %> 
     </button>
     <br>
@@ -13,10 +13,11 @@
                         <div>
                             <h2><%= @article.title %></h2>
                             <%= @article.date %>
+                            <hr class="showHR">
+                            <div><%= simple_format(@article.description.html_safe) %></div>
                             <div>
                                 Tags: <%= @article.tags %> 
-                            </div>
-                            <div id="postArea"><pre id="postedBlog"><%= @article.description.html_safe%></pre></div>
+                            </div><br>
                             <%= render 'editDelete' %>
                         </div>
                     </div>

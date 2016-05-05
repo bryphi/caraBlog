@@ -3,14 +3,15 @@
 </div>
 <div>
                     
-        <% @articles.each do |article| %>
+        <% @articles.each do |article| %> 
         <div class="post">
             <h2><%= article.title %></h2>
             <div>
                 <p><%= article.date %></p>
             </div>
             <div>
-                <pre><%= article.description.html_safe %>...<%= link_to "Continue Reading ->", article_path(article) %></pre>
+                <pre><%= truncate(article.description.html_safe, length: 75) %>
+                <%= link_to " Continue Reading ->", article_path(article) %></pre>
             </div>
         
             <div class="tagDiv">

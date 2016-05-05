@@ -1,0 +1,52 @@
+ <div id="article-lookup">
+
+<h3>Search for articles</h3>
+
+<%= form_tag search_articles_path, remote: true, method: :get, id: 'article-lookup-form' do %>
+
+<div class="form-group row no-padding text-center col-md-12">
+
+<div class="col-md-10">
+
+<%= text_field_tag :article,
+
+params[:article],
+
+placeholder: 'Search by Title or Tag',
+
+autofocus: true,
+
+class: 'form-control search-box input-lg' %>
+
+</div>
+
+<div class="col-md-2">
+
+<%= button_tag(type: :submit, class: 'btn btn-default') do %>
+
+<i class='fa fa-search'></i> Look up an article
+
+<% end %>
+
+</div>
+
+</div>
+
+<% end %>
+
+<% if @article %>
+
+<div id="article-lookup-results" class="well results-block">
+
+<strong>Title:</strong> <%= @article.title %>
+
+<strong>Tags:</strong><%= @article.tags %><br>
+
+<strong><%= link_to "Read Post", article_path(@article) %></strong>
+</div>
+
+<% end %>
+
+<div id="article-lookup-errors"></div>
+
+</div>

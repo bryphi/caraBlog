@@ -1,7 +1,9 @@
 <% if logged_in? %>
     <header class = "">
         <div class = ""> 
-            <%= link_to "Create New Post", new_article_path %>  
+            <button class="btn btn-default">
+                <%= link_to "Create New Post", new_article_path %>
+            </button>
         </div>
     </header>
 <% end %>
