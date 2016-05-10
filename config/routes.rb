@@ -13,9 +13,11 @@ Rails.application.routes.draw do
    get '/portfolio' => 'pages#portfolio'
    get '/resume' => 'pages#resume'
    
-   resources :articles
+   resources :articles 
+   
    
    get 'search_articles', to: 'articles#search'
+   
    
    get '/signup' => 'users#new'
    resources :users, except: [:new]

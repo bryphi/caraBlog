@@ -41,6 +41,11 @@ class ArticlesController < ApplicationController
         
     end 
     
+    def searchPage
+       
+    end
+    
+    
     def destroy
         
         @article.destroy
@@ -49,15 +54,12 @@ class ArticlesController < ApplicationController
     end 
     
     def search
-        if params[:article]
-        @article = Article.find_by(params[:article])
+        @articles = Article.search(params[:search_param])
         
-        @article ||= Article.new_from_lookup(params[:article])
-        end
-        if @article
-        render partial: 'lookup'
+        if @articles
+            render partial: 'lookup'
         else
-        render status: :not_found, nothing: true
+            render status: :not_found, nothing: true
         end
     end 
     

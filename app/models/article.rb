@@ -5,18 +5,24 @@ class Article < ActiveRecord::Base
     validates :date, presence: true
     validates :user_id, presence: true
     
-    def self.find_by(ticker_symbol)
-        where(title: ticker_symbol).first ||
-        where(tags: ticker_symbol).first 
+    
+    def self.search(param)
+        return Article.none if param.blank?
+        param.strip!
+        param.downcase!
+        (title_matches(param) + tags_matches(param)).uniq
     end
     
+    def self.title_matches(param)
+        matches('title', param)
+    end
     
-    def self.new_from_lookup(ticker_symbol)
-    looked_up_stock = StockQuote::Stock.quote(ticker_symbol)
-    return nil unless looked_up_stock.name
-    new_stock = new(ticker: looked_up_stock.symbol, name: looked_up_stock.name)
-    new_stock.last_price = new_stock.price
-    new_stock
+    def self.tags_matches(param)
+        matches('tags', param)
+    end
+    
+    def self.matches(field_name, param)
+        where("lower(#{field_name}) like ?", "%#{param}%")
     end
    
 end 
